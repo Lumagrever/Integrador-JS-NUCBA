@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Lato', sans-serif;
+}
+
+:root{
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%;
+}
+
+a:visited {
+    color: black;
+}
+
+.header{
+    max-width: 1300px;
+    margin: 0 auto;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 50px 0 50px;
+}
+
+.logo img {
+    height: 100px;
+}
+
+.navbar, .navbar-li {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+#menu-toggle{
+    display: none;
+}
+
+.label-burger > i {
+    font-size: 50px;
+    display: none;
+}
