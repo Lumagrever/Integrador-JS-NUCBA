@@ -45,10 +45,22 @@ a:visited {
 
 .navbar, .navbar-li {
     display: flex;
-    gap: 50px;
+    gap: 4rem;
     align-items: center;
     justify-content: center;
     align-content: center;
+}
+
+.navbar a {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--bordorojo);
+}
+
+.navbar-li a:hover {
+    color: var(--green);
+    transition: 300ms;
+
 }
 
 #menu-toggle{
@@ -88,7 +100,8 @@ a:visited {
 }
 
 .section-adventages-container p{
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    font-weight: 500;
     text-align: center;
 }
 
@@ -113,10 +126,12 @@ a:visited {
 .menu-horizontal li {
     padding: 10px;
     text-decoration: 2px overline var(--green);
+    font-weight: 600;
 }
 
 .menu-horizontal > li:hover {
     color: var(--bordorojo);
+    text-decoration: 2px overline var(--semidorado);
     padding: 10px;
 }
 
@@ -131,9 +146,10 @@ a:visited {
 }
 
 .menu-horizontal li:hover .menu-vertical{
-    display: block;
+    display: flex;
     transition: 300ms;
     text-decoration: none;
+    text-align: center;
 }
 
 .menu-horizontal li:hover .menu-vertical li{
