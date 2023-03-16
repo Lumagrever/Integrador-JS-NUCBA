@@ -76,7 +76,54 @@ a:visited {
     padding-bottom: 50px;
 }
 
-/* ACA VA EL SLIDER*/
+/* SLIDER */
+
+.container-slider {
+    overflow: hidden;
+}
+
+.slider{
+    width: 300%;
+    display: flex;
+    align-items: center;
+    margin-left: -100%;
+}
+
+.slider__section{
+    width: 100%;
+}
+
+.slider__img{
+    display: block;
+    width: 100%;
+    object-fit: contain;
+}
+
+.slider__btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: var(--white);
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: monospace;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider__btn:hover{
+    background-color: var(--green);
+    transition: 300ms;
+}
+
+.slider__btn--left{
+    left: 10px
+}
+
+.slider__btn--right{
+    right: 10px;
+}
 
 /* FIN DEL SLIDER*/
 
