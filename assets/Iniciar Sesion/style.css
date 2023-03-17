@@ -79,12 +79,16 @@ a:visited {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 500px;
+    width: 800px;
     padding: 40px;
     transform: translate(-50%, -50%);
     background-color: var(--bordorojo);
     box-shadow: black 0px 20px 30px;
     border-radius: 10px;
+    background-image: url("/assets/Ventajas/Semillas Blur.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .login-box {
@@ -105,7 +109,7 @@ a:visited {
     width: 100%;
     padding: 10px 0;
     margin-top: 50px;
-    font-size: 1.3rem;
+    font-size: 2rem;
     color: var(--white);
     margin-bottom: 2rem;
     border: none;
@@ -123,28 +127,35 @@ a:visited {
     font-size: 1rem;
     color: var(--white);
     pointer-events: none;
-    transition: 500ms;
+    transition: 300ms;
+    font-weight: bold;
 }
 
 .login-box .user-box input:focus~label,
 .login-box .user-box input:valid~label {
     top: -85px;
     left: 0;
-    color: var(--semidorado);
+    color: var(--bordorojo);
+    background-color: var(--semidorado);
     font-size: 1rem;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 #submit {
     padding: 10px 20px;
-    color: var(--green);
-    font-size: 1rem;
+    color: var(--bordorojo);
+    font-size: 1.5rem;
     text-decoration: none;
     text-transform: uppercase;
     overflow: hidden;
     transition: 500ms;
     letter-spacing: 4px;
+    font-weight: 600;
+    background-color: var(--semidorado);
     border: 2px solid var(--semidorado);
     margin: auto;
+    margin-bottom: 10px;
 }
 
 #submit:hover {
@@ -152,7 +163,7 @@ a:visited {
     background-color: var(--semidorado);
     color: var(--bordorojo);
     border-radius: 5px;
-    box-shadow: 0 0 5px var(--semidorado), 0 0 25px var(--semidorado);
+    box-shadow: 0 0 5px var(--semidorado), 0 0 25px var(--green);
 }
 
 .button-form {

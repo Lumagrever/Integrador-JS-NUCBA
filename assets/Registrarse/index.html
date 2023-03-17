@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="/assets/Iniciar Sesion/">
-    <link rel="icon" type="image/png" href="./assets/Logos/Logo - LUMOVERY SIN FONDO.png">
-    <title>LUMOVERY</title>
+    <link rel="stylesheet" href="/assets/Registrarse/style.css">
+    <link rel="icon" type="image/png" href="/assets/Logos/Logo - LUMOVERY SIN FONDO.png">
+    <title>Lumovery - Registro</title>
 </head>
 
 <body>
@@ -50,24 +50,36 @@
 
     <div class="login-box"> 
 
-        <h2>Inicio de Sesión</h2>
+        <h2>Zona de Registro</h2>
         <form action="">
+            <div class="user-box">
+                <input type="text" name="" required="">
+                <label for="">Nombre y apellido</label>
+            </div>
             <div class="user-box">
                 <input type="text" name="" required="">
                 <label for="">Correo Electronico</label>
             </div>
             <div class="user-box">
                 <input type="text" name="" required="">
+                <label for="">Teléfono (opcional)</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="" required="">
                 <label for="">Contraseña</label>
             </div>
-
+            
+                <label class="news-container" id="box-check">Quiero suscribirme al newsletter
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+                </label>
             <div class="button-form">
 
-                <a id="submit" href="#">Iniciar Sesión</a>
+                <a id="submit" href="#">Crear Cuenta</a>
 
                 <div id="register">
-                    ¿No tenes una cuenta?
-                    <a href="">Registrate</a>
+                    ¿Ya tienes una cuenta?
+                    <a href="">Iniciá Sesión</a>
                 </div>
             </div>
         </form>
