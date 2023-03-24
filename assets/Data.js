@@ -1,6 +1,6 @@
 // PRODUCTOS DE LA DIETETICA 
 
-const productos_dietetica = [
+const productsDietetic = [
     {
         id: 1,
         nombre: "Alfajores Celienergy",
@@ -165,7 +165,7 @@ const productos_dietetica = [
         sector: "Alimentos Naturales",
         tipo: "Barritas, Snacks, galletitas y más",
         precio: 480,
-        img: "./assets/Productos/Alimentos Naturales/Barritas, Snacks, galletitas y mas/.webp"
+        img: "./assets/Productos/Alimentos Naturales/Barritas, Snacks, galletitas y mas/Galletitas Delicel.webp"
     },
     {
         id: 21,
@@ -625,7 +625,7 @@ const productos_dietetica = [
         sector: "Bebidas e Infusiones",
         tipo: "Jugos y mas",
         precio: 140,
-        img: "./assets/Productos/Bebidas e Infusiones/Jugos y mas/Jugo de Maracuya  Cuarto Creciente Sin Azucar.webp"
+        img: "./assets/Productos/Bebidas e Infusiones/Jugos y mas/Jugo de Maracuya Cuarto Creciente Sin Azucar.webp"
     },
     {
         id: 78,
@@ -650,22 +650,6 @@ const productos_dietetica = [
         tipo: "Jugos y mas",
         precio: 210,
         img: "./assets/Productos/Bebidas e Infusiones/Jugos y mas/Jugos Naturales - Estancia los Naranjos.webp"
-    },
-    {
-        id: 81,
-        nombre: "Pura Frutta Jugo 100% Exprimido Combinado 1L",
-        sector: "Bebidas e Infusiones",
-        tipo: "Jugos y mas",
-        precio: 285,
-        img: "./assets/Productos/Bebidas e Infusiones/Jugos y mas/Pura Frutta Jugo 100% Exprimido Combinado.webp"
-    },
-    {
-        id: 82,
-        nombre: "Pura Frutta Jugo 100% Exprimido Orgánico de Manzana",
-        sector: "Bebidas e Infusiones",
-        tipo: "Jugos y mas",
-        precio: 285,
-        img: "./assets/Productos/Bebidas e Infusiones/Jugos y mas/Pura Frutta Jugo 100% Exprimido Orgánico de Manzana.webp"
     },
     {
         id: 83,
@@ -1324,14 +1308,6 @@ const productos_dietetica = [
         img: "./assets/Productos/Despensa/Especias y Condimentos/Baharat Importado Premium.webp"
     },
     {
-        id: 165,
-        nombre: "Cacao Amargo 100% Puro de Ecuador 100gr",
-        sector: "Despensa",
-        tipo: "Especias y Condimentos",
-        precio: 355,
-        img: "./assets/Productos/Despensa/Especias y Condimentos/Cacao Amargo 100% Puro de Ecuador.webp"
-    },
-    {
         id: 166,
         nombre: "Canela de Ceylán Molida Premium 100gr",
         sector: "Despensa",
@@ -1969,7 +1945,7 @@ const productos_dietetica = [
         sector: "Suplementos Naturales",
         tipo: "Suplementos Nutricionales",
         precio: 1485,
-        img: "./assets/Productos/Suplementos Naturales/Suplementos Nutricionales/Spirulina Siluet - 60 Cápsulas Vitamin Waywebp"
+        img: "./assets/Productos/Suplementos Naturales/Suplementos Nutricionales/Spirulina Siluet - 60 Cápsulas Vitamin Way.webp"
     },
     {
         id: 246,
@@ -2009,7 +1985,7 @@ const productos_dietetica = [
         sector: "Suplementos Naturales",
         tipo: "Suplementos Nutricionales",
         precio: 4310,
-        img: "./assets/Productos/Suplementos Naturales/Suplementos Nutricionales/Batido Adelgazante AdelgaFruta Vitamin Way"
+        img: "./assets/Productos/Suplementos Naturales/Suplementos Nutricionales/Batido Adelgazante AdelgaFruta Vitamin Way.webp"
     },
     {
         id: 251,
@@ -2044,3 +2020,21 @@ const productos_dietetica = [
         img: "./assets/Productos/Kits/Kit Verano.webp"
     }
 ]
+
+//FUNCION PARA MOSTRAR TODAS LAS CARDS
+
+const splitProducts = (size) => {
+    let divideProducts = [];
+    for (let i = 0; i < productsDietetic.length; i += size) {
+        divideProducts.push(productsDietetic.slice(i, i + size));
+    }
+    return divideProducts;
+};
+
+// FUNCION QUE CREA OBJETO QUE SETEA LOS PRODUCTOS POR EL SLICE
+
+const productsController = {
+    divideProducts: splitProducts(10),
+    nextProductsIndex: 1,
+    productLimit: splitProducts (10).length,
+}

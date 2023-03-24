@@ -29,8 +29,7 @@
 
             <nav class="navbar">
 
-                <label class="label-burger" for="menu-toggle"> <i class="fa-solid fa-bars"> </i> </label>
-                <input type="checkbox" id="menu-toggle">
+                <label class="label-burger" for="menu-toggle"> <i class="fa-solid fa-bars" style="color: #501b1b;"></i> </label>
 
                 <ul class="navbar-li">
 
@@ -102,11 +101,26 @@
 
     </div>
 
-    <div class="div-categories-products separate">
+    <div class="div-categories-products">
 
         <div class="title-products separate">
             <h2>Productos</h2>
         </div>
+
+
+            <form class="search-product separate">
+
+                <div class="input-product tipos">
+                    
+                    <button type="submit" class="search-input-submit">
+                    <img src="./assets/Ventajas/Lupa-Sin-Fondo.png" alt="Lupa">
+                    </button>
+                    <input type="text" placeholder="¿Que estás buscando?" class="input-text-search" id="input-box">
+    
+                </div>
+
+            </form>
+
 
         <div>
 
@@ -115,13 +129,13 @@
                 <li>
                     Alimentos Naturales
 
-                    <ul class="menu-vertical">
+                    <ul class="menu-vertical tipos" >
 
-                    <li>Alfajores, bombones y más</li>
-                    <li>Barritas, Snacks, Galletitas y más</li>
-                    <li>Cereales y Granolas</li>
-                    <li>Dulces, Mermeladas y más</li>
-                    <li>Frutas secas y más</li>
+                    <li class="tipo" data-tipo="Alfajores, bombones y más"> Alfajores, bombones y más </li>
+                    <li class="tipo" data-tipo="Barritas, Snacks, galletitas y más"> Barritas, Snacks, Galletitas y más </li>
+                    <li class="tipo" data-tipo="Cereales y Granolas">Cereales y Granolas</li>
+                    <li class="tipo" data-tipo="Dulces, Mermeladas y mas">Dulces, Mermeladas y más</li>
+                    <li class="tipo" data-tipo="Frutas Secas y mas">Frutas secas y más</li>
 
                     </ul>
 
@@ -130,13 +144,13 @@
                 <li>
                     Bebidas e Infusiones
 
-                    <ul class="menu-vertical">
+                    <ul class="menu-vertical tipos">
 
-                        <li>Jugos y más</li>
-                        <li>Leches Vegetales</li>
-                        <li>Tés del mundo</li>
-                        <li>Vinos</li>
-                        <li>Yerba Mate</li>
+                        <li class="tipo" data-tipo="Jugos y mas">Jugos y más</li>
+                        <li class="tipo" data-tipo="Leches Vegetales">Leches Vegetales</li>
+                        <li class="tipo" data-tipo="Tés del mundo">Tés del mundo</li>
+                        <li class="tipo" data-tipo="Vinos">Vinos</li>
+                        <li class="tipo" data-tipo="Yerba Mate">Yerba Mate</li>
 
 
                     </ul>
@@ -146,13 +160,13 @@
                 <li>
                     Despensa
 
-                    <ul class="menu-vertical">
+                    <ul class="menu-vertical tipos">
 
-                        <li>Aceites y Aderezos</li>
-                        <li>Endulzantes Naturales</li>
-                        <li>Especias y Condimentos</li>
-                        <li>Fideos y Pastas</li>
-                        <li>Semillas, Legumbres y más</li>
+                        <li class="tipo" data-tipo="Aceites y Aderezos">Aceites y Aderezos</li>
+                        <li class="tipo" data-tipo="Endulzantes Naturales">Endulzantes Naturales</li>
+                        <li class="tipo" data-tipo="Especias y Condimentos">Especias y Condimentos</li>
+                        <li class="tipo" data-tipo="Fideos y pastas">Fideos y Pastas</li>
+                        <li class="tipo" data-tipo="Semillas, Legumbres y mas">Semillas, Legumbres y más</li>
 
                     </ul>
 
@@ -162,17 +176,17 @@
 
                     Suplementos Naturales
 
-                    <ul class="menu-vertical">
+                    <ul class="menu-vertical tipos">
 
-                        <li>Control de Peso</li>
-                        <li>Cuidados de la piel</li>
-                        <li>Suplementos Nutricionales</li>
+                        <li class="tipo" data-tipo="Control de Peso">Control de Peso</li>
+                        <li class="tipo" data-tipo="Cuidados de la Piel">Cuidados de la piel</li>
+                        <li class="tipo" data-tipo="Suplementos Nutricionales">Suplementos Nutricionales</li>
 
                     </ul>
 
                 </li>
 
-                <li>Kits</li>
+                <li class="tipo" data-tipo="Kits">Kits</li>
 
 
             </ul>
@@ -185,145 +199,95 @@
 
             <div class="cards-products-container">
 
+                <!--
+
                 <div class="card-product">
 
                     <img src="assets/Productos/Alimentos Naturales/Alfajores, bombones y mas/Alfajores Celienergy.webp" alt="">
                     <p class="product-name">Alfajores Celienergy</p>
                     <span class="price-product">$450</span>
-                    <a href=""><p>Añadir</p></a>
+                    <button
+                    data-id='${}'
+                    data-name='${}'
+                    data-bid='${}'
+                    data-img='${}'>Añadir</button>
 
                 </div>
 
                 <div class="card-product">
 
-                    <img src="assets/Productos/Alimentos Naturales/Alfajores, bombones y mas/Alfajores de Arroz Lulemu.webp" alt="">
-                    <p class="product-name">Alfajores de Arroz Lulemu</p>
+                    <img src="assets/Productos/Alimentos Naturales/Alfajores, bombones y mas/Alfajores Celienergy.webp" alt="">
+                    <p class="product-name">Alfajores Celienergy</p>
                     <span class="price-product">$450</span>
-                    <a href=""><p>Añadir</p></a>
+                    <button
+                    data-id='${}'
+                    data-name='${}'
+                    data-bid='${}'
+                    data-img='${}'>Añadir</button>
 
                 </div>
 
                 <div class="card-product">
 
-                    <img src="assets/Productos/Alimentos Naturales/Alfajores, bombones y mas/Bocaditos Georgalos Rellenos Sin Azucar.webp" alt="">
-                    <p class="product-name">Bocaditos Georgalos Rellenos Sin Azucar</p>
+                    <img src="assets/Productos/Alimentos Naturales/Alfajores, bombones y mas/Alfajores Celienergy.webp" alt="">
+                    <p class="product-name">Alfajores Celienergy</p>
                     <span class="price-product">$450</span>
-                    <a href=""><p>Añadir</p></a>
+                    <button
+                    data-id='${}'
+                    data-name='${}'
+                    data-bid='${}'
+                    data-img='${}'>Añadir</button>
 
-                </div class="card-product">
+                </div>
 
                 <div class="card-product">
 
-                    <img src="assets/Productos/Alimentos Naturales/Alfajores, bombones y mas/Bocaditos Georgalos Sin Azucar.webp" alt="">
-                    <p class="product-name">Bocaditos Georgalos Sin Azucar</p>
+                    <img src="assets/Productos/Alimentos Naturales/Alfajores, bombones y mas/Alfajores Celienergy.webp" alt="">
+                    <p class="product-name">Alfajores Celienergy</p>
                     <span class="price-product">$450</span>
-                    <a href=""><p>Añadir</p></a>
+                    <button
+                    data-id='${}'
+                    data-name='${}'
+                    data-bid='${}'
+                    data-img='${}'>Añadir</button>
 
                 </div>
 
                 <div class="card-product">
 
-                    <img src="" alt="">
-                    <p class="product-name">nombre del producto</p>
-                    <span class="price-product">precio</span>
-                    <a href=""><p>Añadir</p></a>
+                    <img src="assets/Productos/Alimentos Naturales/Alfajores, bombones y mas/Alfajores Celienergy.webp" alt="">
+                    <p class="product-name">Alfajores Celienergy</p>
+                    <span class="price-product">$450</span>
+                    <button
+                    data-id='${}'
+                    data-name='${}'
+                    data-bid='${}'
+                    data-img='${}'>Añadir</button>
 
                 </div>
 
                 <div class="card-product">
 
-                    <img src="" alt="">
-                    <p class="product-name">nombre del producto</p>
-                    <span class="price-product">precio</span>
-                    <a href=""><p>Añadir</p></a>
-
-                </div>
-
-                <div class="card-product">
-
-                    <img src="" alt="">
-                    <p class="product-name">nombre del producto</p>
-                    <span class="price-product"v>precio</span>
-                    <a href=""><p>Añadir</p></a>
-
-                </div>
-
-                <div class="card-product">
-
-                    <img src="" alt="">
-                    <p class="product-name">nombre del producto</p>
-                    <span class="price-product">precio</span>
-                    <a href=""><p>Añadir</p></a>
-
-                </div>
-
-                <div class="card-product">
-
-                    <img src="" alt="">
-                    <p class="product-name">nombre del producto</p>
-                    <span class="price-product">precio</span>
-                    <a href=""><p>Añadir</p></a>
-
-                </div>
-
-                <div class="card-product">
-
-                    <img src="" alt="">
-                    <p class="product-name">nombre del producto</p>
-                    <span class="price-product"v>precio</span>
-                    <a href=""><p>Añadir</p></a>
-
-                </div>
-
-                <div class="card-product">
-
-                    <img src="" alt="">
-                    <p class="product-name">nombre del producto</p>
-                    <span class="price-product">precio</span>
-                    <a href=""><p>Añadir</p></a>
-
-                </div>
-
-                <div class="card-product">
-
-                    <img src="" alt="">
-                    <p class="product-name">nombre del producto</p>
-                    <span class="price-product">precio</span>
-                    <a href=""><p>Añadir</p></a>
-
-                </div>
-
-                <div class="card-product">
-
-                    <img src="" alt="">
-                    <p class="product-name"v>nombre del producto</p>
-                    <span class="price-product">precio</span>
-                    <a href=""><p>Añadir</p></a>
-
-                </div>
-
-                <div class="card-product">
-
-                    <img src="" alt="">
-                    <p class="product-name">nombre del producto</p>
-                    <span class="price-product">precio</span>
-                    <a href=""><p>Añadir</p></a>
-
-                </div>
-
-                <div class="card-product">
-
-                    <img src="" alt="">
-                    <p class="product-name">nombre del producto</p>
-                    <span class="price-product">precio</span>
-                    <a href=""><p>Añadir</p></a>
+                    <img src="assets/Productos/Alimentos Naturales/Alfajores, bombones y mas/Alfajores Celienergy.webp" alt="">
+                    <p class="product-name">Alfajores Celienergy</p>
+                    <span class="price-product">$450</span>
+                    <button
+                    data-id='${}'
+                    data-name='${}'
+                    data-bid='${}'
+                    data-img='${}'>Añadir</button>
 
                 </div>
 
             </div>
 
+            -->
 
         </article>
+
+        <div class="separate-top">
+        <button class="btn-load">Ver más</button>
+        </div>
 
     </div>
 
@@ -407,9 +371,10 @@
             <p> LUMOVERY © - Todos los derechos reservados || <a href="https://www.linkedin.com/in/lucas-rivero-39297b23b/"> <b> Lucas Rivero </b> </a> - <a href="https://nucba.com.ar"> <b>NUCBA</b> </a> </p>
 
         </div>
-
-    <script src="./assets/main.js"></script>
+    
     <script src="./assets/slider.js"></script>
+    <script src="./assets/data.js"></script>
+    <script src="./assets/main.js"></script>
 </body>
 
 </html>
