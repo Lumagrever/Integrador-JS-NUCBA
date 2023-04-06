@@ -33,13 +33,33 @@
 
                 <ul class="navbar-li">
 
-                    <li> <a href="">Inicio </a> </li>
-                    <li> <a href="">Productos </a> </li>
-                    <li> <a href="">Contactanos</a> </li>
-                    <li> <a href="">Iniciar sesión</a> </li>
-                    <li> <a href=""> <i class="fa-solid fa-cart-shopping"> </i> </a> </li>
-
+                    <li> <a href="" class="navbar-link">Inicio </a> </li>
+                    <li> <a href="" class="navbar-link">Productos </a> </li>
+                    <li> <a href="" class="navbar-link">Contactanos</a> </li>
+                    <li> <a href="" class="navbar-link">Iniciar sesión</a> </li>
                 </ul>
+
+                <div class="cart-label">
+                    <i class="fa-solid fa-cart-shopping">
+                        <div class="cart-bubble"></div>
+                    </i>
+                </div>
+                <div class="cart">
+                    <h2>Tus productos</h2>
+
+                    <div class="cart-container">
+
+                    </div>
+
+                    <span class="divider"></span>
+                    <div class="cart-total"></div>
+                        <p>Total:</p>
+                        <span class="total"></span>
+                </div>
+                <button class="btn-buy">Comprar</button>
+                <button class="btn-delete">Vaciar carrito</button>
+
+                <div class="overlay show-overlay"></div>
 
             </nav>
 
@@ -186,8 +206,17 @@
 
                 </li>
 
-                <li class="tipo" data-tipo="Kits">Kits</li>
+                <li>
 
+                    Kits
+
+                    <ul class="menu-vertical tipos">
+
+                        <li class="tipo" data-tipo="Control de Peso">Kits variados</li>
+
+                    </ul>
+
+                </li>
 
             </ul>
 
@@ -372,8 +401,8 @@
 
         </div>
     
-    <script src="./assets/slider.js"></script>
     <script src="./assets/data.js"></script>
+    <script src="./assets/slider.js"></script>
     <script src="./assets/main.js"></script>
 </body>
 

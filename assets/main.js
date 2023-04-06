@@ -3,18 +3,7 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 const saveLocalStorage = (productsList) =>
-    localStorage.setItem('products', JSON.stringify(productsList))
-
-    //FUNCIÓN DE MENU HAMBURGUESA
-const btnBars = document.querySelector(".label-burger");
-const barsMenu = document.querySelector(".navbar-li");
-
-//MENU HAMBURGUESA
-
-const toggleMenu = () => {
-    barsMenu.classList.toggle(`menu-open`);
-}
-
+    localStorage.setItem('cart', JSON.stringify(productsList))
 
 // RENDERIZAR CARDS DE PRODUCTOS-
 
@@ -25,7 +14,7 @@ const btnLoad = document.querySelector(".btn-load")
 // CONTENEDOR DE TIPOS
 const typesProducts = document.querySelector(".tipos")
 // COLECCIÓN DE TIPOS
-const TypesProductsList = document.querySelectorAll(".tipo")
+const typesProductsList = document.querySelectorAll(".tipo")
 
 // FUNCIÓN QUE MUESTRA EL PRODUCTO
 
@@ -48,17 +37,26 @@ const renderCardsProducts = (product) => {
 // FUNCION PARA MOSTRAR LOS PRODUCTOS POR PARTES
 
 const renderPartsProducts = (index = 0) => {
-    products.innerHTML += productsController.divideProducts[index].map(renderCardsProducts).join("");
+    products.innerHTML += productsController.divideProducts[index].map(renderCardsProducts).join('');
 };
 
 // FUNCION QUE MUESTRRA LOS PRODUCTOS QUE FUERON FILTRADOS POR TIPOS
 
 const renderFilteredProducts = (tipo) => {
-    const productsTypesList = productsDietetic.filter((product) =>{
+    const productsTypesList = productsDietetic.filter(
+        product => product.tipo === tipo
+    );
+    products.innerHTML = productsTypesList.map(renderCardsProducts).join('')
+};
+
+/*
+const renderFilteredProducts = (tipo) => {
+    const productsList = productsDietetic.filter((product) => {
         return product.tipo === tipo;
     });
-    products.innerHTML = productsTypesList.map(renderCardsProducts).join("")
+    products.innerHTML = productsList.map(renderCardsProducts).join("");
 };
+*/
 
 // FUNCION QUE MUESTRA LOS PRODUCTOS FILTRADOS O SIN FILTRAR
 
@@ -70,41 +68,60 @@ const renderProducts = (index = 0, tipo = undefined) => {
     renderFilteredProducts(tipo);
 };
 
+// FUNCION PARA CAMBIAR COLOR DE BTN DE CATEGORIA SELECCIONADA
+
+
 const changeFilterState = (e) => {
-    const selectedTipo = e.target.dataset.tipo;
-    changeBtnActiveState(selectedTipo);
-    changeShowMoreBtnState(selectedTipo);
+    const selectedType = e.target.dataset.tipo;
+    changeBtnActiveState(selectedType);
+    changeShowMoreBtnState(selectedType);
 }
 
-// POSIBLEMENTE SAQUE EL ACTIVE PORQUE NO ME SERVIRIA
 
 /*
-
-const changeBtnActiveState = () => {
-    const tipos = [...TypesProductsList];
-    tipos.forEach((tipoBtn) => {
-        if(tipoBtn.dataset.tipo !== selectedTipo) {
-            tipoBtn.classList.remove('active');
+const changeBtnActiveState = (selectedType) => {
+    const tipos = [...typesProductsList];
+    tipos.forEach((typesBtn) => {
+        if (typesBtn.dataset.tipo !== selectedType) {
+            typesBtn.classList.remove(`active`);
             return;
-        }
-        tipoBtn.classList.add('active')
-    })
-}
+        };
+        typesBtn.classList.add(`active`);
+    });
+};
 */
+
+
+//FUNCION QUE MUESTRA U OCULTA BOTON DE "VER MAS"
 
 const changeShowMoreBtnState = (tipo) => {
     if (!tipo) {
         btnLoad.classList.remove('hidden');
-        rerturn;
+        return;
     }
     btnLoad.classList.add('hidden');
 }
+
+
+// FUNCION PARA APLICAR FILTRO
+
+const applyFilter = (event) => {
+    if (!event.target.classList.contains('tipo')) return;
+    changeFilterState(event);
+    if (!event.target.dataset.tipo) {
+        products.innerHTML = "";
+        renderProducts();
+    } else {
+        renderProducts(0, event.target.dataset.tipo);
+        productsController.nextProductsIndex = 1;
+    }
+};
 
 // FUNCION QUE COMPRUEBA LLEGAR AL ULTIMO INDEX
 
 const isLastIndexOf = () => {
     return (
-        productsController.nextProductsIndex === productsController.productsLimit
+        productsController.nextProductsIndex === productsController.productLimit
     )
 }
 
@@ -116,28 +133,68 @@ const showMoreProducts = () => {
     }
 }
 
+// Carrito
+const cartBtn = document.querySelector(".cart-label");
+const cartMenu = document.querySelector('.cart');
+const btnBars = document.querySelector(".label-burger");
+const barsMenu = document.querySelector(".navbar-li");
+const overlay = document.querySelector('.overlay');
 
+//MENU HAMBURGUESA
 
-// FUNCION PARA APLICAR FILTRO
-
-const applyFilter = (element) => {
-    if (!element.target.classList.contains('tipo')) return;
-    changeFilterState(element);
-    if (!element.target.dataset.tipo) {
-        products.innerHTML = "";
-        renderProducts();
-    } else {
-        renderProducts(0, element.target.dataset.tipo);
-        productsController.nextProductsIndex = 1;
+const toggleMenu = () => {
+    barsMenu.classList.toggle(`open-menu`);
+    if(cartMenu.classList.contains('open-cart')) {
+        cartMenu.classList.remove('open-cart')
+        return
     }
+    overlay.classList.toggle('show-overlay');
+}
+
+const toggleCart = () => {
+    cartMenu.classList.toggle(`open-cart`);
+    if(barsMenu.classList.contains('open-menu')) {
+        barsMenu.classList.remove('open-menu')
+        return
+    }
+    overlay.classList.toggle('show-overlay');
+}
+
+const closeOnScroll = () => {
+    if(
+        !barsMenu.classList.contains('open-menu') &&
+        !cartMenu.classList.contains('open-cart')){
+        return;
+    }
+    overlay.classList.remove('show-overlay');
 };
 
 
+const closeOnClick = (e) => {
+    if (!e.target.classList.contains('navbar-link')) return;
+    barsMenu.classList.remove('open-menu');
+    overlay.classList.remove('show-overlay');
+}
+
+
+const closeOnOverlayClick = () => {
+    barsMenu.classList.remove('open-menu');
+    cartMenu.classList.remove('open-cart');
+    overlay.classList.remove('show-overlay');
+}
+
+
+// Init
+
  const init = () => {
-    btnBars.addEventListener('click', toggleMenu);
     renderProducts()
     typesProducts.addEventListener('click', applyFilter);
     btnLoad.addEventListener('click', showMoreProducts);
+    btnBars.addEventListener('click', toggleMenu);
+    cartBtn.addEventListener('click', toggleCart);
+    barsMenu.addEventListener('click', closeOnClick);
+    overlay.addEventListener('click', closeOnOverlayClick);
+    window.addEventListener('scroll', closeOnScroll);
 }
 
 init();

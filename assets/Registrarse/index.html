@@ -48,25 +48,29 @@
 
     </div>
 
-    <div class="login-box"> 
+    <div class="login-box" id="form"> 
 
         <h2>Zona de Registro</h2>
         <form action="">
-            <div class="user-box">
-                <input type="text" name="" required="">
-                <label for="">Nombre y apellido</label>
+            <div class="form__field">
+                <input type="text" name="" id="username" autocomplete="off">
+                <label for="">Username</label>
+                <small></small>
             </div>
-            <div class="user-box">
-                <input type="text" name="" required="">
-                <label for="">Correo Electronico</label>
+            <div class="form__field">
+                <input type="text" name="" id="email" autocomplete="off">
+                <label for="">Email</label>
+                <small></small>
             </div>
-            <div class="user-box">
-                <input type="text" name="" required="">
-                <label for="">Teléfono (opcional)</label>
+            <div class="form__field">
+                <input type="password" name="" id="password" autocomplete="off">
+                <label for="">Password</label>
+                <small></small>
             </div>
-            <div class="user-box">
-                <input type="password" name="" required="">
-                <label for="">Contraseña</label>
+            <div class="form__field">
+                <input type="" name="" id="phone" autocomplete="off">
+                <label for="">Teléfono</label>
+                <small></small>
             </div>
             
                 <label class="news-container" id="box-check">Quiero suscribirme al newsletter
@@ -75,7 +79,7 @@
                 </label>
             <div class="button-form">
 
-                <a id="submit" href="#">Crear Cuenta</a>
+                <input type="submit" class="form_submit_btn" value="Crear Cuenta">
 
                 <div id="register">
                     ¿Ya tienes una cuenta?
@@ -84,6 +88,8 @@
             </div>
         </form>
     </div>
+
+    <script src="/assets/register.js"></script>
 
 </body>
 
