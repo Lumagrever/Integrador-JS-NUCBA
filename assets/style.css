@@ -401,6 +401,8 @@ a:visited {
     font-size: 1.7rem;
 }
 
+/*
+
 .search-product {
     display: flex;
     align-items: center;
@@ -446,6 +448,8 @@ a:visited {
     width: 3.5rem;
     border-left: 1px solid var(--green);
 }
+
+*/
 
 
 .div-categories-products {
@@ -593,81 +597,6 @@ a:visited {
     display: none;
 }
 
-.div-section-wapp {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.question-wapp {
-    text-align: center;
-}
-
-.question-wapp p{
-    font-size: 2rem;
-    text-decoration:  2px overline var(--green);
-}
-
-.question-wapp span{
-    font-size: 2rem;
-    color: var(--green);
-}
-
-.section-wapp{
-    display: flex;
-}
-
-.form-wapp {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-}
-
-.form-wapp label{
-    font-size: 1.3rem;
-    color: var(--bordorojo);
-    font-weight: bold;
-}
-
-.form-wapp a{
-    font-size: 1.7rem;
-    color: var(--green);
-    font-weight: bold;
-    border-style: 2px var(--semidorado solid);
-}
-
-.form-wapp a:hover {
-    color: var(--bordorojo);
-}
-
-
-
-#input-name-wapp  {
-    font-size: 1rem;
-    width: 250px;
-    padding: 10px;
-    border: 3px solid var(--semidorado);
-}
-
-#input-name-wapp:hover{
-    background-color: var(--semidorado);
-    transition: 300ms;
-}
-
-#input-question-wapp{
-    font-size: 1rem;
-    width: 250px;
-    height: 150px;
-    padding: 10px;
-    border: 3px solid var(--semidorado)
-}
-
-#input-question-wapp:hover{
-    background-color: var(--semidorado);
-    transition: 300ms;
-}
-
 .footer {
     display: flex;
     flex-direction: column;
@@ -700,6 +629,80 @@ a:visited {
 .contact-container li {
     font-size: 1.2rem;
     padding-bottom: 1rem;
+}
+
+.div-section-wapp {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.question-wapp {
+    text-align: center;
+}
+
+.question-wapp p{
+    font-size: 2rem;
+    text-decoration:  2px overline var(--green);
+}
+
+.question-wapp span{
+    font-size: 2rem;
+    color: var(--green);
+}
+
+.section-wapp{
+    display: flex;
+}
+
+.form-wapp {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.form-wapp label{
+    font-size: 1.3rem;
+    color: var(--bordorojo);
+    font-weight: bold;
+}
+
+.form-wapp a{
+    font-size: 1.7rem;
+    color: var(--green);
+    font-weight: bold;
+    border-style: 2px var(--semidorado solid);
+}
+
+.form-wapp a:hover {
+    color: var(--bordorojo);
+}
+
+#input-name-wapp  {
+    font-size: 1rem;
+    width: 250px;
+    padding: 5px;
+    border: 3px solid var(--semidorado);
+}
+
+#input-name-wapp:hover{
+    background-color: var(--semidorado);
+    transition: 300ms;
+}
+
+#input-question-wapp{
+    font-size: 1rem;
+    width: 250px;
+    height: 110px;
+    padding: 5px;
+    border: 3px solid var(--semidorado)
+}
+
+#input-question-wapp:hover{
+    background-color: var(--semidorado);
+    transition: 300ms;
 }
 
 .social-container {
