@@ -29,7 +29,7 @@ const renderCardsProducts = (product) => {
             <button class="btn-add"
             data-id=${id}
             data-name=${nombre}
-            data-bid=${precio}
+            data-precio=${precio}
             data-img=${img}>Añadir</button>
         </div>`
 };
@@ -190,15 +190,15 @@ const closeOnOverlayClick = () => {
 
 const productsCart = document.querySelector(".cart-container");
 
-const total = document.querySelector(".total");
-
-const buyBtn = document.querySelector(".btn-buy");
-
 const cartBubble = document.querySelector(".cart-bubble");
 
 const successModal = document.querySelector(".add-modal");
 
+const buyBtn = document.querySelector(".btn-buy");
+
 const deleteBtn = document.querySelector(".btn-delete");
+
+const total = document.querySelector(".total");
 
 const renderCardProduct = (cartProduct) => {
     const {id, nombre, precio, img, quantity} = cartProduct
