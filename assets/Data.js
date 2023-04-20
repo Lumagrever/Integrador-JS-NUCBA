@@ -2036,5 +2036,5 @@ const splitProducts = (size) => {
 const productsController = {
     divideProducts: splitProducts(10),
     nextProductsIndex: 1,
-    productLimit: splitProducts (10).length,
+    productLimit: splitProducts(10).length,
 }
