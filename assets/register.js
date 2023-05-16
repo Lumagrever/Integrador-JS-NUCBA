@@ -15,9 +15,9 @@ const checkUsername = () => {
     const username = nameInput.value.trim();
 
     if(isEmpty(username)){
-        showError(nameInput, 'El nombre es obligatorio')
+        showError(nameInput, 'El username es obligatorio')
     } else if(!isBetween(username.length, min, max)) {
-        showError(nameInput, `El nombre debe tener entre ${min} y ${max}`);
+        showError(nameInput, `El username debe tener entre ${min} y ${max}`);
     } else {
         showSuccess(nameInput)
         valid = true;

@@ -25,12 +25,12 @@ const renderCardsProducts = (product) => {
             <img src="${img}" alt="${nombre}">
             <p class="product-name">${nombre}</p>
             <span class="price-product">$${precio}</span>
-            <small> ${sector} ${tipo}</small>
+            <small class="hidden-sector"> ${sector} ${tipo}</small>
             <button class="btn-add"
-            data-id=${id}
-            data-name=${nombre}
-            data-precio=${precio}
-            data-img=${img}>Añadir</button>
+            data-id="${id}"
+            data-name="${nombre}"
+            data-precio="${precio}"
+            data-img="${img}">Añadir</button>
         </div>`
 };
 
@@ -42,21 +42,24 @@ const renderPartsProducts = (index = 0) => {
 
 // FUNCION QUE MUESTRRA LOS PRODUCTOS QUE FUERON FILTRADOS POR TIPOS
 
+
+/*
 const renderFilteredProducts = (tipo) => {
     const productsTypesList = productsDietetic.filter(
         product => product.tipo === tipo
     );
     products.innerHTML = productsTypesList.map(renderCardsProducts).join('')
 };
+*/
 
-/*
+
 const renderFilteredProducts = (tipo) => {
     const productsList = productsDietetic.filter((product) => {
         return product.tipo === tipo;
     });
     products.innerHTML = productsList.map(renderCardsProducts).join("");
-};
-*/
+}; 
+
 
 // FUNCION QUE MUESTRA LOS PRODUCTOS FILTRADOS O SIN FILTRAR
 
@@ -73,7 +76,7 @@ const renderProducts = (index = 0, tipo = undefined) => {
 
 const changeFilterState = (e) => {
     const selectedType = e.target.dataset.tipo;
-    changeBtnActiveState(selectedType);
+    //changeBtnActiveState(selectedType);
     changeShowMoreBtnState(selectedType);
 }
 
@@ -105,6 +108,7 @@ const changeShowMoreBtnState = (tipo) => {
 
 // FUNCION PARA APLICAR FILTRO
 
+
 const applyFilter = (event) => {
     if (!event.target.classList.contains('tipo')) return;
     changeFilterState(event);
@@ -116,6 +120,7 @@ const applyFilter = (event) => {
         productsController.nextProductsIndex = 1;
     }
 };
+
 
 // FUNCION QUE COMPRUEBA LLEGAR AL ULTIMO INDEX
 
@@ -215,7 +220,7 @@ const renderCardProduct = (cartProduct) => {
         <span class="item-quantity">${quantity}</span>
         <span class="quantity-handler up" data-id="${id}">+</span>
     </div>
-</div>
+    </div>
     `
 };
 
@@ -309,17 +314,18 @@ const addUnitToProduct = product => {
         );
 };
 
+// Funcion que va a crear un objeto para la data del producto
+
+const productData = (id, nombre, precio, img) => {
+    return {id, nombre, precio, img};
+};
+
 // Funcion para verificar si existe un producto en el carrito
 
 const isExistingCartProduct = product => {
     return cart.find(item => item.id == product.id)
 };
 
-// Funcion que va a crear un objeto para la data del producto
-
-const productData = (id, nombre, precio, img) => {
-    return {id, nombre, precio, img};
-};
 
 // Funcion para manipular el boton "menos"
 
@@ -370,6 +376,8 @@ const handleQuantity = e => {
     checkCartState();
 };
 
+// Funcion que borra todos los items del carrito
+
 const resetCartItems = () => {
     cart = [];
     checkCartState();
@@ -377,7 +385,7 @@ const resetCartItems = () => {
 
 // Funcion para realizar una de las acciones del carrito
 const completeCartAction = (confirmMsg, successMsg) => {
-    if (!cart.lenght) return;
+    if (!cart.length) return;
     if (window.confirm(confirmMsg)){
         resetCartItems();
         alert(successMsg);
@@ -389,7 +397,7 @@ const completeBuy = () => {
 };
 
 const deleteCart = () => {
-    completeCartAction('¿Desea borrar todo?', 'No hay productos en el carrito');
+    completeCartAction('¿Deseas vaciar tu carrito?', 'Tu carrito esta vacío');
 };
 
 
@@ -408,13 +416,13 @@ const deleteCart = () => {
     overlay.classList.remove('show-overlay');
     document.addEventListener('DOMContentLoaded', renderCart);
     document.addEventListener('DOMContentLoaded', showTotal);
+    disableBtn(buyBtn);
+    disableBtn(deleteBtn);
     products.addEventListener('click', addProduct);
     productsCart.addEventListener('click', handleQuantity);
     buyBtn.addEventListener('click', completeBuy);
     deleteBtn.addEventListener('click', deleteCart);
     renderCartBubble();
-    disableBtn(buyBtn);
-    disableBtn(deleteBtn);
     //checkCartState();
 }
 

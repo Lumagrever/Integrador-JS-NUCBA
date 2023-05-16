@@ -44,15 +44,15 @@ a:visited {
 
 .navbar, .navbar-li {
     display: flex;
-    gap: 4rem;
+    gap: 3.5rem;
     align-items: center;
     justify-content: center;
     align-content: center;
 }
 
 .navbar a {
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 1.2rem;
+    font-weight: bold;
     color: var(--bordorojo);
 }
 
@@ -79,7 +79,7 @@ a:visited {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 700px;
+    width: 600px;
     padding: 40px;
     transform: translate(-50%, -50%);
     background-color: var(--bordorojo);
@@ -89,9 +89,6 @@ a:visited {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-}
-
-.login-box {
     margin: 0 0 30px;
     padding: 0;
     color: var(--white);
@@ -99,7 +96,7 @@ a:visited {
 }
 
 .login-box h2{
-    margin-top: 50px;
+    margin-top: 30px;
     font-size: 35px;
     color: var(--green);
 }
@@ -111,7 +108,6 @@ a:visited {
     margin-top: 50px;
     font-size: 1.5rem;
     color: var(--white);
-    margin-bottom: 2rem;
     border: none;
     border-bottom: 1px solid var(--white);
     outline: none;
@@ -133,13 +129,24 @@ a:visited {
 
 .login-box .form__field input:focus~label,
 .login-box .form__field input:valid~label {
-    top: -85px;
     left: 0;
     color: var(--bordorojo);
     background-color: var(--semidorado);
     font-size: 1rem;
     border-radius: 10px;
     padding: 5px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.form__field small {
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: bolder;
 }
 
     /* Contenedor */

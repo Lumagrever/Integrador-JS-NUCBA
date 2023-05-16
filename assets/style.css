@@ -46,15 +46,15 @@ a:visited {
 
 .navbar, .navbar-li {
     display: flex;
-    gap: 4rem;
+    gap: 3.5rem;
     align-items: center;
     justify-content: center;
     align-content: center;
 }
 
 .navbar a {
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 1.2rem;
+    font-weight: bold;
     color: var(--bordorojo);
 }
 
@@ -390,8 +390,8 @@ a:visited {
 }
 
 .section-adventages-container p{
-    font-size: 1.3rem;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 600;
     text-align: center;
 }
 
@@ -474,15 +474,16 @@ a:visited {
     }
 
 .menu-horizontal li {
-    padding: 10px;
+    padding: 5px;
     text-decoration: 2px overline var(--green);
-    font-weight: 600;
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 
 .menu-horizontal > li:hover {
     color: var(--bordorojo);
     text-decoration: 2px overline var(--semidorado);
-    padding: 10px;
+    padding: 5px;
 }
 
 .menu-vertical{
@@ -491,7 +492,7 @@ a:visited {
     width: auto;
     background-color: var(--semidorado);
     transition: 300ms;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -508,14 +509,14 @@ a:visited {
 }
 
 .menu-vertical li:hover{
-    color: var(--white);
+    color: var(--bordorojo);
     transition: 300ms;
 }
 
 .menu-vertical li {
     display: block;
     color: var(--white);
-    padding: 15px 15px 15px 20px;
+    padding: 10px 10px 10px 10px;
 }
 
 .article-render-products{
@@ -526,7 +527,7 @@ a:visited {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 5.5rem;
+    gap: 3rem;
 }
 
 .card-product {
@@ -535,32 +536,38 @@ a:visited {
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 2.5rem;
+    gap: 1rem;
     width: 350px;
+    border: 2px solid var(--white);
+    border-radius: 10px;
+}
+
+.card-product:hover {
+    border: 1px solid var(--semidorado);
 }
 
 .card-product img {
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     object-fit: contain;
 }
 
 .product-name {
-    font-size: 1.5rem;
+    font-size: 1rem;
     height: 34px;
     color: var(--bordorojo);
     font-weight: 600;
 }
 
 .price-product {
-    font-size: 1.3rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .card-product button {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: var(--green);
-    font-weight: 500;
+    font-weight: bold;
     padding: 5px;
     cursor: pointer;
     background: none;
@@ -569,6 +576,10 @@ a:visited {
 .card-product button:hover {
     color: var(--semidorado);
     transition: 300ms;
+}
+
+.hidden-sector {
+    display: none;
 }
 
 .separate-top {
@@ -580,9 +591,9 @@ a:visited {
 .btn-load {
     background-color: var(--semidorado);
     border: none;
-    padding: 20px 50px;
+    padding: 15px 25px;
     color: var(--bordorojo);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
 }
@@ -610,7 +621,7 @@ a:visited {
 }
 
 .titles-footer{
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: var(--bordorojo);
     text-decoration: 2px overline var(--green);
@@ -627,7 +638,7 @@ a:visited {
 }
 
 .contact-container li {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding-bottom: 1rem;
 }
 
@@ -642,12 +653,12 @@ a:visited {
 }
 
 .question-wapp p{
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-decoration:  2px overline var(--green);
 }
 
 .question-wapp span{
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--green);
 }
 
@@ -664,13 +675,13 @@ a:visited {
 }
 
 .form-wapp label{
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: var(--bordorojo);
     font-weight: bold;
 }
 
 .form-wapp a{
-    font-size: 1.7rem;
+    font-size: 1rem;
     color: var(--green);
     font-weight: bold;
     border-style: 2px var(--semidorado solid);
@@ -695,7 +706,7 @@ a:visited {
 #input-question-wapp{
     font-size: 1rem;
     width: 250px;
-    height: 110px;
+    height: 70px;
     padding: 5px;
     border: 3px solid var(--semidorado)
 }
