@@ -591,9 +591,9 @@ a:visited {
 .btn-load {
     background-color: var(--semidorado);
     border: none;
-    padding: 15px 25px;
+    padding: 20px 30px;
     color: var(--bordorojo);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: bold;
     cursor: pointer;
 }
@@ -681,14 +681,17 @@ a:visited {
 }
 
 .form-wapp a{
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--green);
     font-weight: bold;
-    border-style: 2px var(--semidorado solid);
+    padding: 5px;
+    border: 3px solid var(--semidorado);
 }
 
 .form-wapp a:hover {
-    color: var(--bordorojo);
+    border: 3px solid var(--green);
+    color: var(--semidorado);
+    transition: 300ms;
 }
 
 #input-name-wapp  {

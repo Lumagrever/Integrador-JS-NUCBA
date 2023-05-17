@@ -65,11 +65,11 @@ const checkPhone = () => {
         showSuccess(phoneInput);
         valid = true;
     }
-    return true;
+    return valid;
 };
 
 const isPhoneValid = (phone) => {
-    const re = /^\d{10}$/
+    const re = /^[0-9]{10}$/;
     return re.test(phone);
 };
 
@@ -104,8 +104,18 @@ const showSuccess = (input) => {
     error.textContent = '';
 }
 
+const isValidForm = () => {
+    const isUsernameValid = checkUsername()
+    const isEmailValid = checkEmail()
+    const isPasswordValid = checkPassword()
+    const isPhoneValid = checkPhone()
 
+    return (isUsernameValid && isEmailValid && isPasswordValid && isPhoneValid);
+}
 
+//METODO ALTERNATIVO
+
+/*
 
 form.addEventListener('submit', (e) =>{
     e.preventDefault();
@@ -120,6 +130,7 @@ form.addEventListener('submit', (e) =>{
         form.submit();
     }
 });
+*/
 
 const debounce = (fn, delay = 1000) => {
     let timeoutId;
@@ -153,3 +164,18 @@ form.addEventListener(
         }
     })
 );
+
+// FUNCION QUE MANEJA EL EVENTO SUBMIT
+const submitForm = (e) => {
+    e.preventDefault();
+    if (isValidForm()) {
+        alert("¡Tu cuenta ha sido creada correctamente!");
+        form.reset();
+    }
+};
+
+const init = () => {
+    form.addEventListener("submit", submitForm);
+};
+
+init();

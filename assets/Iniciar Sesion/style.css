@@ -195,3 +195,58 @@ a:visited {
 #register a:hover {
     color: var(--green);
 }
+
+@media (max-width: 960px) {
+
+    .navbar ul{
+        background-color: var(--semidorado);
+    }
+
+    .navbar-li {
+        background-color: var(--semidorado);
+        position: absolute;
+        width: 100%;
+        top: 135px;
+        left: 0;
+        flex-direction: column;
+        background: var(--verde);
+        z-index: 3;
+        transform: translateX(-200%);
+        gap: 25px;
+        padding: 30px;
+        border-top: 1px solid var(--blanco);
+        transition: 0.4s ease-in-out;
+    }
+    
+    .label-burger > i {
+        font-size: 2rem;
+        display: flex;
+        cursor: pointer;
+    }
+
+    .open-menu{
+        transform: translateX(0%);
+        transition: 0.4s ease-in-out;
+    }
+
+    .login-box {
+        width: 570px;
+    }
+    
+    .login-box .user-box input{
+        font-size: 1.4rem;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .login-box {
+        width: 400px;
+    }
+    
+    .login-box .user-box input{
+        font-size: 1.4rem;
+    }
+    
+}

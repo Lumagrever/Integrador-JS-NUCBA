@@ -2034,7 +2034,7 @@ const splitProducts = (size) => {
 // FUNCION QUE CREA OBJETO QUE SETEA LOS PRODUCTOS POR EL SLICE
 
 const productsController = {
-    divideProducts: splitProducts(10),
+    divideProducts: splitProducts(20),
     nextProductsIndex: 1,
-    productLimit: splitProducts(10).length,
+    productLimit: splitProducts(20).length,
 }

@@ -42,17 +42,6 @@ const renderPartsProducts = (index = 0) => {
 
 // FUNCION QUE MUESTRRA LOS PRODUCTOS QUE FUERON FILTRADOS POR TIPOS
 
-
-/*
-const renderFilteredProducts = (tipo) => {
-    const productsTypesList = productsDietetic.filter(
-        product => product.tipo === tipo
-    );
-    products.innerHTML = productsTypesList.map(renderCardsProducts).join('')
-};
-*/
-
-
 const renderFilteredProducts = (tipo) => {
     const productsList = productsDietetic.filter((product) => {
         return product.tipo === tipo;
@@ -109,14 +98,14 @@ const changeShowMoreBtnState = (tipo) => {
 // FUNCION PARA APLICAR FILTRO
 
 
-const applyFilter = (event) => {
-    if (!event.target.classList.contains('tipo')) return;
-    changeFilterState(event);
-    if (!event.target.dataset.tipo) {
+const applyFilter = (e) => {
+    if (!e.target.classList.contains('tipo')) return;
+    changeFilterState(e);
+    if (!e.target.dataset.tipo) {
         products.innerHTML = "";
         renderProducts();
     } else {
-        renderProducts(0, event.target.dataset.tipo);
+        renderProducts(0, e.target.dataset.tipo);
         productsController.nextProductsIndex = 1;
     }
 };
@@ -130,6 +119,8 @@ const isLastIndexOf = () => {
     )
 }
 
+
+// Funcion para que funcione BTN ver más
 const showMoreProducts = () => {
     renderProducts(productsController.nextProductsIndex);
     productsController.nextProductsIndex++;
@@ -400,6 +391,20 @@ const deleteCart = () => {
     completeCartAction('¿Deseas vaciar tu carrito?', 'Tu carrito esta vacío');
 };
 
+// Formulario Wapp
+
+const presentation = 'Hola, mi nombre es'
+const consult = 'y mi consulta es la siguiente:'
+const nameWapp = document.querySelector('#input-name-wapp');
+const questionWapp = document.querySelector('#input-question-wapp');
+const btnSend = document.querySelector('#btnSend')
+
+let message;
+
+send = () => {
+    message = `https://api.whatsapp.com/send?phone=5491155146757&text=${presentation}%20${nameWapp.value}%20${consult}%20${questionWapp.value}`;
+    btnSend.href = message;
+}
 
 
 // Init
@@ -423,7 +428,6 @@ const deleteCart = () => {
     buyBtn.addEventListener('click', completeBuy);
     deleteBtn.addEventListener('click', deleteCart);
     renderCartBubble();
-    //checkCartState();
 }
 
 init();

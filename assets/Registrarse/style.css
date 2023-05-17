@@ -77,7 +77,7 @@ a:visited {
 
 .login-box {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     width: 600px;
     padding: 40px;
@@ -245,7 +245,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #register {
-    font-size: 16px;
+    font-size: 20px;
     text-decoration: none;
     color: var(--semidorado);
     margin: auto;
@@ -261,4 +261,64 @@ input[type=number]::-webkit-outer-spin-button {
 
 #register a:hover {
     color: var(--green);
+}
+
+@media (max-width: 960px) {
+
+    .navbar ul{
+        background-color: var(--semidorado);
+    }
+
+    .navbar-li {
+        background-color: var(--semidorado);
+        position: absolute;
+        width: 100%;
+        top: 135px;
+        left: 0;
+        flex-direction: column;
+        background: var(--verde);
+        z-index: 3;
+        transform: translateX(-200%);
+        gap: 25px;
+        padding: 30px;
+        border-top: 1px solid var(--blanco);
+        transition: 0.4s ease-in-out;
+    }
+    
+    .label-burger > i {
+        font-size: 2rem;
+        display: flex;
+        cursor: pointer;
+    }
+
+    .open-menu{
+        transform: translateX(0%);
+        transition: 0.4s ease-in-out;
+    }
+
+    .login-box {
+        width: 570px;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .login-box {
+        width: 380px;
+    }
+    
+    .login-box .user-box input{
+        font-size: 1.4rem;
+    }
+    
+    .login-box .form__field input{
+        font-size: 1.4rem;
+    }
+    
+        /* Contenedor */
+        .news-container {
+            font-size: 1.1rem;
+          }
+    
 }
