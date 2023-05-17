@@ -62,26 +62,18 @@ a:visited {
 
 }
 
-#menu-toggle{
-    display: none;
-}
-
-.label-burger > i {
-    font-size: 50px;
-    display: none;
-}
-
 .separate {
     padding-bottom: 50px;
 }
 
+.login-box-section {
+    display: flex;
+    justify-content: center;
+}
+
 .login-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
     width: 800px;
     padding: 40px;
-    transform: translate(-50%, -50%);
     background-color: var(--bordorojo);
     box-shadow: black 0px 20px 30px;
     border-radius: 10px;
@@ -112,7 +104,7 @@ a:visited {
     margin-top: 50px;
     font-size: 2rem;
     color: var(--white);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     border: none;
     border-bottom: 1px solid var(--white);
     outline: none;
@@ -132,6 +124,16 @@ a:visited {
     font-weight: bold;
 }
 
+.form__field small {
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: bolder;
+}
+
+.small-space {
+    padding-bottom: 0.5rem;
+}
+
 .login-box .user-box input:focus~label,
 .login-box .user-box input:valid~label {
     top: -85px;
@@ -143,7 +145,7 @@ a:visited {
     padding: 5px;
 }
 
-#submit {
+.form_submit_btn {
     padding: 10px 20px;
     color: var(--bordorojo);
     font-size: 1.5rem;
@@ -157,9 +159,10 @@ a:visited {
     border: 2px solid var(--semidorado);
     margin: auto;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
-#submit:hover {
+.form_submit_btn:hover {
     font-weight: 600;
     background-color: var(--semidorado);
     color: var(--bordorojo);
@@ -197,32 +200,6 @@ a:visited {
 }
 
 @media (max-width: 960px) {
-
-    .navbar ul{
-        background-color: var(--semidorado);
-    }
-
-    .navbar-li {
-        background-color: var(--semidorado);
-        position: absolute;
-        width: 100%;
-        top: 135px;
-        left: 0;
-        flex-direction: column;
-        background: var(--verde);
-        z-index: 3;
-        transform: translateX(-200%);
-        gap: 25px;
-        padding: 30px;
-        border-top: 1px solid var(--blanco);
-        transition: 0.4s ease-in-out;
-    }
-    
-    .label-burger > i {
-        font-size: 2rem;
-        display: flex;
-        cursor: pointer;
-    }
 
     .open-menu{
         transform: translateX(0%);

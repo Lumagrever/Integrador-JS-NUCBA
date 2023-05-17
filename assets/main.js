@@ -1,23 +1,21 @@
-//LOCAL STORAGE
-//Seteamos el carrito
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
+// Local Storage
 const saveLocalStorage = (productsList) =>
     localStorage.setItem('cart', JSON.stringify(productsList))
 
-// RENDERIZAR CARDS DE PRODUCTOS-
+// Seteamos el carrito
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// CONTENEDOR DE PRODUCTOS
+
+// Contenedor de productos
 const products = document.querySelector(".cards-products-container")
-// BOTON PARA VER MAS
+// Botón "ver más"
 const btnLoad = document.querySelector(".btn-load")
-// CONTENEDOR DE TIPOS
+// Contenedor de tipos
 const typesProducts = document.querySelector(".tipos")
-// COLECCIÓN DE TIPOS
+// Colección de tipos
 const typesProductsList = document.querySelectorAll(".tipo")
 
-// FUNCIÓN QUE MUESTRA EL PRODUCTO
-
+// Funcion que muestra el producto
 const renderCardsProducts = (product) => {
     const {id, nombre, sector, tipo, precio, img} = product
     return `
@@ -34,13 +32,13 @@ const renderCardsProducts = (product) => {
         </div>`
 };
 
-// FUNCION PARA MOSTRAR LOS PRODUCTOS POR PARTES
+// Funcion para mostrar los productos por partes
 
 const renderPartsProducts = (index = 0) => {
     products.innerHTML += productsController.divideProducts[index].map(renderCardsProducts).join('');
 };
 
-// FUNCION QUE MUESTRRA LOS PRODUCTOS QUE FUERON FILTRADOS POR TIPOS
+// Funcion que muestra los productos que fueron filtrados por tipos
 
 const renderFilteredProducts = (tipo) => {
     const productsList = productsDietetic.filter((product) => {
@@ -50,7 +48,7 @@ const renderFilteredProducts = (tipo) => {
 }; 
 
 
-// FUNCION QUE MUESTRA LOS PRODUCTOS FILTRADOS O SIN FILTRAR
+// Funcion que muestra los productos filtrados o sin filtrar
 
 const renderProducts = (index = 0, tipo = undefined) => {
     if (!tipo) {
@@ -60,15 +58,18 @@ const renderProducts = (index = 0, tipo = undefined) => {
     renderFilteredProducts(tipo);
 };
 
-// FUNCION PARA CAMBIAR COLOR DE BTN DE CATEGORIA SELECCIONADA
+// FUNCION PARA CAMBIAR COLOR DE BTN DE CATEGORIA SELECCIONADA Y EL ESTADO DE FILTRO
 
 
 const changeFilterState = (e) => {
     const selectedType = e.target.dataset.tipo;
-    //changeBtnActiveState(selectedType);
+    //changeBtnActiveState(selectedType); Funcion deshabilitada para cambiar el color
     changeShowMoreBtnState(selectedType);
 }
 
+
+
+// Funcion deshabilitada para cambiar el color
 
 /*
 const changeBtnActiveState = (selectedType) => {
@@ -84,7 +85,7 @@ const changeBtnActiveState = (selectedType) => {
 */
 
 
-//FUNCION QUE MUESTRA U OCULTA BOTON DE "VER MAS"
+// Funcion que muestra u oculta el boton "Ver mas"
 
 const changeShowMoreBtnState = (tipo) => {
     if (!tipo) {
@@ -95,8 +96,7 @@ const changeShowMoreBtnState = (tipo) => {
 }
 
 
-// FUNCION PARA APLICAR FILTRO
-
+// Funcion para aplicar filtro
 
 const applyFilter = (e) => {
     if (!e.target.classList.contains('tipo')) return;
@@ -111,7 +111,7 @@ const applyFilter = (e) => {
 };
 
 
-// FUNCION QUE COMPRUEBA LLEGAR AL ULTIMO INDEX
+// Funcion que comprueba llegar al ultimo index
 
 const isLastIndexOf = () => {
     return (
@@ -120,7 +120,7 @@ const isLastIndexOf = () => {
 }
 
 
-// Funcion para que funcione BTN ver más
+// Funcion para que funcione el botón "ver más"
 const showMoreProducts = () => {
     renderProducts(productsController.nextProductsIndex);
     productsController.nextProductsIndex++;
@@ -129,14 +129,14 @@ const showMoreProducts = () => {
     }
 }
 
-// Carrito
+// Carrito - Menu Hamburguesa
 const cartBtn = document.querySelector(".cart-label");
 const cartMenu = document.querySelector('.cart');
 const btnBars = document.querySelector(".label-burger");
 const barsMenu = document.querySelector(".navbar-li");
 const overlay = document.querySelector('.overlay');
 
-//MENU HAMBURGUESA
+// Menu Hamburguesa
 
 const toggleMenu = () => {
     barsMenu.classList.toggle(`open-menu`);
@@ -182,19 +182,15 @@ const closeOnOverlayClick = () => {
     cartMenu.classList.remove('open-cart');
 }
 
-// CARRITO
+// Carrito - Cartas y botones
 
 const productsCart = document.querySelector(".cart-container");
-
 const cartBubble = document.querySelector(".cart-bubble");
-
 const successModal = document.querySelector(".add-modal");
-
 const buyBtn = document.querySelector(".btn-buy");
-
 const deleteBtn = document.querySelector(".btn-delete");
-
 const total = document.querySelector(".total");
+
 
 const renderCardProduct = (cartProduct) => {
     const {id, nombre, precio, img, quantity} = cartProduct
@@ -391,7 +387,7 @@ const deleteCart = () => {
     completeCartAction('¿Deseas vaciar tu carrito?', 'Tu carrito esta vacío');
 };
 
-// Formulario Wapp
+// Formulario de Wapp
 
 const presentation = 'Hola, mi nombre es'
 const consult = 'y mi consulta es la siguiente:'

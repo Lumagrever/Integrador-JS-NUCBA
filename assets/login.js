@@ -1,14 +1,12 @@
-// Declaracion de variables
-
 const form = document.getElementById('form');
 const nameInput = document.getElementById('username');
-const emailInput = document.getElementById('email');
 const passInput = document.getElementById('password');
-const phoneInput = document.getElementById('phone');
 
+const isEmpty = (value) => value === '';
+
+const isBetween = (length, min, max) => length < min || length > max ? false : true;
 
 // Se evalua el Username
-
 const checkUsername = () => {
     let valid = false;
     const min = 8;
@@ -26,24 +24,7 @@ const checkUsername = () => {
     return valid;
 } 
 
-// Se evalua el Email
-
-const checkEmail = () => {
-    let valid = false;
-    const emailValue = emailInput.value.trim();
-    if(isEmpty(emailValue)){
-        showError(emailInput, 'El email es obligatorio');
-    } else if(!isEmailValid(emailValue)){
-        showError(emailInput, 'El email no es valido');
-    } else {
-        showSuccess(emailInput);
-        valid = true;
-    }
-    return valid
-}
-
 // Se evalua la contraseña
-
 const checkPassword = () => {
     let valid = false;
     const password = passInput.value.trim();
@@ -58,41 +39,12 @@ const checkPassword = () => {
     return valid;
 }
 
-// Se evalua el telefono
-
-const checkPhone = () => {
-    let valid = false;
-    const phoneValue = phoneInput.value.trim();
-    if(!isPhoneValid(phoneValue)) {
-        showError(phoneInput, 'El telefono ingresado debe tener 10 digitos')
-    } else {
-        showSuccess(phoneInput);
-        valid = true;
-    }
-    return valid;
-};
-
-const isPhoneValid = (phone) => {
-    const re = /^[0-9]{10}$/;
-    return re.test(phone);
-};
-
-const isEmailValid = (email) => {
-    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return re.test(email);
-};
-
 const isPassValid = (pass) => {
     const re = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
     return re.test(pass);
 };
 
-const isEmpty = (value) => value === '';
-
-const isBetween = (length, min, max) => length < min || length > max ? false : true;
-
 // Mensaje de errores
-
 const showError = (input, message) => {
     const formField = input.parentElement;
     formField.classList.remove('success')
@@ -113,30 +65,10 @@ const showSuccess = (input) => {
 
 const isValidForm = () => {
     const isUsernameValid = checkUsername()
-    const isEmailValid = checkEmail()
     const isPasswordValid = checkPassword()
-    const isPhoneValid = checkPhone()
 
-    return (isUsernameValid && isEmailValid && isPasswordValid && isPhoneValid);
+    return (isUsernameValid && isPasswordValid);
 }
-
-// Metodo Alternativo
-
-/*
-form.addEventListener('submit', (e) =>{
-    e.preventDefault();
-// valido cada campo
-    const isUsernameValid = checkUsername()
-    const isEmailValid = checkEmail()
-    const isPasswordValid = checkPassword()
-    const isPhoneValid = checkPhone()
-//valido el form
-    const isFormValid = isUsernameValid && isEmailValid && isPasswordValid && isPhoneValid;
-    if(isFormValid) {
-        form.submit();
-    }
-});
-*/
 
 const debounce = (fn, delay = 1000) => {
     let timeoutId;
@@ -158,25 +90,18 @@ form.addEventListener(
             case 'username':
                 checkUsername();
                 break;
-            case 'email':
-                checkEmail();
-                break;
             case 'password':
                 checkPassword();
                 break;
-            case 'phone':
-                checkPhone();
-                break
         }
     })
 );
 
 // Funcion que maneja el evento SUBMIT
-
 const submitForm = (e) => {
     e.preventDefault();
     if (isValidForm()) {
-        alert("¡Tu cuenta ha sido creada correctamente!");
+        alert("¡Has iniciado sesión!");
         form.reset();
     }
 };
@@ -186,3 +111,5 @@ const init = () => {
 };
 
 init();
+
+

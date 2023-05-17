@@ -62,26 +62,18 @@ a:visited {
 
 }
 
-#menu-toggle{
-    display: none;
-}
-
-.label-burger > i {
-    font-size: 50px;
-    display: none;
-}
-
 .separate {
     padding-bottom: 50px;
 }
 
+.login-box-section {
+    display: flex;
+    justify-content: center;
+}
+
 .login-box {
-    position: absolute;
-    top: 55%;
-    left: 50%;
     width: 600px;
     padding: 40px;
-    transform: translate(-50%, -50%);
     background-color: var(--bordorojo);
     box-shadow: black 0px 20px 30px;
     border-radius: 10px;
@@ -147,6 +139,10 @@ input[type=number]::-webkit-outer-spin-button {
     color: var(--white);
     font-size: 0.8rem;
     font-weight: bolder;
+}
+
+.small-space {
+    padding-bottom: 0.5rem;
 }
 
     /* Contenedor */
@@ -264,32 +260,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media (max-width: 960px) {
-
-    .navbar ul{
-        background-color: var(--semidorado);
-    }
-
-    .navbar-li {
-        background-color: var(--semidorado);
-        position: absolute;
-        width: 100%;
-        top: 135px;
-        left: 0;
-        flex-direction: column;
-        background: var(--verde);
-        z-index: 3;
-        transform: translateX(-200%);
-        gap: 25px;
-        padding: 30px;
-        border-top: 1px solid var(--blanco);
-        transition: 0.4s ease-in-out;
-    }
-    
-    .label-burger > i {
-        font-size: 2rem;
-        display: flex;
-        cursor: pointer;
-    }
 
     .open-menu{
         transform: translateX(0%);

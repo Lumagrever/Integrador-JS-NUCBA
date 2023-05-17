@@ -29,16 +29,9 @@
 
             <nav class="navbar">
 
-                <label class="label-burger" for="menu-toggle"> <i class="fa-solid fa-bars"> </i> </label>
-                <input type="checkbox" id="menu-toggle">
-
                 <ul class="navbar-li">
 
                     <li> <a href="/index.html">Inicio </a> </li>
-                    <li> <a href="">Productos </a> </li>
-                    <li> <a href="">Contactanos</a> </li>
-                    <li> <a href="">Iniciar sesión</a> </li>
-                    <li> <a href=""> <i class="fa-solid fa-cart-shopping"> </i> </a> </li>
 
                 </ul>
 
@@ -48,22 +41,30 @@
 
     </div>
 
-    <div class="login-box"> 
+    <div class="login-box-section">
+
+    <div class="login-box" id="form">
 
         <h2>Inicio de Sesión</h2>
         <form action="">
-            <div class="user-box">
-                <input type="text" name="" required="">
+            <div class="user-box form__field">
+                <input type="text" name="username" id="username" autocomplete="off">
                 <label for="">Username</label>
+                <div>
+                    <small></small>
+                </div>
             </div>
-            <div class="user-box">
-                <input type="password" name="" required="">
+            <div class="user-box form__field">
+                <input type="password" name="" id="password" autocomplete="off">
                 <label for="">Contraseña</label>
+                <div class="small-space">
+                    <small></small>
+                </div>
             </div>
 
             <div class="button-form">
 
-                <a id="submit" href="/index.html">Iniciar Sesión</a>
+                <input type="submit" class="form_submit_btn" value="INICIAR SESIÓN">
 
                 <div id="register">
                     ¿No tienes una cuenta?
@@ -72,7 +73,11 @@
             </div>
         </form>
     </div>
-    <script src="/assets/main.js"></script>
+
+    </div>
+
+    <script src="/assets/login.js"></script>
+
 </body>
 
 </html>
