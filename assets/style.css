@@ -31,13 +31,14 @@ a:visited {
 }
 
 .header{
-    max-width: 1300px;
+    /*max-width: 1300px;*/
     margin: 0 auto;
     height: 110px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 0 50px 0 50px;
+    border-bottom: 3px solid var(--semidorado);
 }
 
 .logo img {
@@ -89,11 +90,11 @@ a:visited {
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    height: calc(100vh - 0px);
+    height: calc(100vh - 100px);
     overflow-y: scroll;
     z-index: 2;
-    min-width: 350px;
-    transform: translateY(-120%);
+    min-width: 290px;
+    transform: translateY(-200%);
     padding-bottom: 70px;
     transition: 0.2s ease-in-out;
 }
@@ -117,10 +118,11 @@ a:visited {
 
 .cart-item {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     gap: 15px;
     padding: 15px;
+    text-align:justify
 }
 
 .cart-item img {
@@ -136,6 +138,7 @@ a:visited {
 .item-info {
     display: flex;
     flex-direction: column;
+    align-items: center;
     min-width: 100px;
 }
 
@@ -155,10 +158,9 @@ a:visited {
 
 .item-price,
 .cart-total span {
-    color: var(--green);
+    color: black;
     font-size: 19px;
-    font-weight: 600;
-    text-shadow: -2px -1px 1px black;
+    font-weight: bold;
     letter-spacing: 1px;
 }
 
@@ -203,8 +205,7 @@ a:visited {
 
 .cart-total {
     display: flex;
-    justify-content: flex-end;
-    align-items: baseline;
+    justify-content: center;
     width: 100%;
     padding-right: 15px;
     gap: 15px;
@@ -213,6 +214,7 @@ a:visited {
 .cart-total p {
     color: var(--green);
     font-size: 18px;
+    font-weight: 600;
 }
 
 .cart-bubble {
@@ -250,6 +252,14 @@ a:visited {
 .btn-delete {
     border: none;
     color: var(--white);
+}
+
+.btn-buy:hover {
+    color: var(--semidorado);
+}
+
+.btn-delete:hover {
+    color: var(--bordorojo)
 }
 
 /* TOGGLE DEL CARRITO PARA JS */
@@ -382,7 +392,10 @@ a:visited {
 
 .section-adventages-container {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
+    gap: 1.5rem;
 }
 
 .section-adventages-container img{
@@ -463,12 +476,15 @@ a:visited {
 
 .menu-horizontal{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
     user-select: none;
+    gap: 2rem;
 }
 
 .tipos{
-
+    text-align: center;
 }
 
 .tipo {
@@ -540,7 +556,7 @@ a:visited {
     text-align: center;
     gap: 1rem;
     width: 350px;
-    border: 2px solid var(--white);
+    border: 1px solid var(--white);
     border-radius: 10px;
 }
 
@@ -664,6 +680,7 @@ a:visited {
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
 .titles-footer{
@@ -831,8 +848,288 @@ a:visited {
         transition: 0.2s ease-in-out;
     }
 
+    .about-us-section {
+        height: 0%;
+        padding: 30px 0 0 0;
+    }
+    
+    .about-us{
+        gap: 0.5rem;
+        width: 80%;
+        padding: 0 0 20px 30px;
+    }
+    
+    .about-us p{
+        font-size: 1.1rem;
+        gap: 1rem;
+    }
+
+    .menu-horizontal li:hover .menu-vertical{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
 
 @media (max-width: 576px) {
+
+    .header{
+        justify-content: space-between;
+    }
+    
+    .navbar, .navbar-li {
+        gap: 2rem;
+    }
+    
+    /* CARRITO */
+    
+    .cart {
+        width: 60%;
+    }
+    
+    .cart-item {
+        flex-direction: column;
+    }
+     
+    .item-info {
+        align-items: center;
+        
+    }
+    
+    .item-title {
+        text-align: center;
+    } 
+    
+    .item-price,
+    .cart-total span {
+        color: var(--green);
+        font-size: 19px;
+        font-weight: 600;
+        text-shadow: -2px -1px 1px black;
+        letter-spacing: 1px;
+    }
+    
+    .item-handler {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .quantity-handler {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background-color: var(--white);
+        color: var(--green);
+        font-weight: 600;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    
+    .item-quantity {
+        color: var(--green);
+        font-size: 14px;
+        font-weight: 600;
+    }
+    
+    .up {
+        border: 1px solid var(--green);
+    }
+    
+    .down {
+        background: var(--white);
+        border: 1px solid var(--green);
+    }
+    
+    .divider {
+        width: 90%;
+        border: 1.5px solid var(--white);
+    }
+    
+    .cart-total {
+        display: flex;
+    }  
+    
+    /* FIN DE CARRITO */
+    
+    .separate {
+        padding-bottom: 2rem;
+    }
+    
+    /* SLIDER */
+    
+    .container-slider {
+        overflow: hidden;
+    }
+    
+    .slider{
+        width: 300%;
+        display: flex;
+        align-items: center;
+        margin-left: -100%;
+    }
+    
+    .slider__section{
+        width: 100%;
+    }
+    
+    .slider__img{
+        display: block;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .slider__section img {
+        height: 280px;
+    }
+    
+    /* FIN DEL SLIDER*/
+    
+    /* VENTAJAS */
+    
+    .title-adventages{
+        font-size: 1.5rem;
+    }
+    
+    .section-adventages-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .section-adventages-container img{
+        width: 300px;
+        height: 300px;
+    }
+    
+    .section-adventages-container p{
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-align: center;
+    }
+    
+    .title-products {
+        font-size: 1.5rem;
+    }
+    
+    .menu-horizontal{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tipos{
+        gap: 1rem;
+    }
+    
+    
+    .menu-vertical li {
+        padding: 10px 5px 10px 5px;
+    }
+    
+    
+    .cards-products-container {
+        gap: 1rem;
+    }
+    
+    .card-product {
+        width: 300px;
+        border: 1px solid var(--semidorado);
+    }
+    
+    .card-product img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .product-name {
+        font-size: 1.2rem;
+    }
+    
+    .price-product {
+        font-size: 1.3rem;
+    }
+    
+    .card-product button {
+        font-size: 1.3rem;
+    }
+    
+    .separate-top {
+        padding-top: 30px;
+    }
+    
+    .about-us-section {
+        height: 0%;
+        padding: 30px 0 0 0;
+    }
+    
+    .title-about-us {
+        font-size: 1.5rem;
+    }
+    
+    .about-us{
+        gap: 0.5rem;
+        width: 80%;
+        padding: 0 0 20px 30px;
+    }
+    
+    .about-us p{
+        font-size: 1rem;
+        gap: 1rem;
+    }
+    
+    .margin {
+        margin-bottom: 30px;
+    }
+    
+    .footer {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .titles-footer{
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--bordorojo);
+        text-decoration: 2px overline var(--green);
+        text-align: center;
+    }
+    
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem;
+    }
+    
+    .contact-container b{
+        color: var(--bordorojo);
+    }
+    
+    .contact-container li {
+        padding: 0 0 1rem 10px;
+    }
+    
+    .social-icon {
+        flex-direction: row;
+    }
+    
+    .map-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .map-container iframe {
+        width: 300px;
+    }
+    
+    #credits {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
 
 }
