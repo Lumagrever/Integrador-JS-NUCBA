@@ -793,6 +793,7 @@ a:visited {
 .social-icon i{
     font-size: 2rem;
     cursor: pointer;
+    color: var(--green);
 }
 
 .social-icon i:hover{
