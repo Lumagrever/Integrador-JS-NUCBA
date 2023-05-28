@@ -1787,6 +1787,7 @@ const productsDietetic = [
         precio: 600,
         img: "./assets/Productos/Suplementos Naturales/Cuidados de la Piel/Coenzima Q10 - 30 Capsulas Vitamin Way.webp"
     },
+    /*
     {
         id: 226,
         nombre: "Colágeno + CoQ10 + Vitamina E - 50 Capsulas Natier",
@@ -1811,6 +1812,7 @@ const productsDietetic = [
         precio: 940,
         img: "./assets/Productos/Suplementos Naturales/Cuidados de la Piel/Colageno Bebible + Vitamina C + Q10 - Vitamin Way.webp"
     },
+    */
     {
         id: 229,
         nombre: "Colágeno Calcio - 30 Cápsulas Vitamin Way",
@@ -1987,6 +1989,7 @@ const productsDietetic = [
         precio: 4310,
         img: "./assets/Productos/Suplementos Naturales/Suplementos Nutricionales/Batido Adelgazante AdelgaFruta Vitamin Way.webp"
     },
+    /*
     {
         id: 251,
         nombre: "Probiótico 7 Cepas + Vitaminas Vitacomplex C Pluswebp",
@@ -2002,7 +2005,7 @@ const productsDietetic = [
         tipo: "Kits",
         precio: 3350,
         img: "./assets/Productos/Kits/Kit Meraki Holder + Cepillos.webp"
-    },
+    },*/
     {
         id: 253,
         nombre: "Kit Sano y Natural",
